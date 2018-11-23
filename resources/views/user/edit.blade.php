@@ -33,6 +33,18 @@
         <h3 class="card-header">Información Personal</h3>
         <div class="card-body">
 
+    @if(count($errors) > 0)
+        <div class="errors">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <br>
+
         <form action="{{ route('user.store') }}" method="POST">
             {!! csrf_field() !!}
             <div class="form-row">

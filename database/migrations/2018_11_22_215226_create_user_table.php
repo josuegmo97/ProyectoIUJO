@@ -17,7 +17,7 @@ class CreateUserTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('lastname');
-            $table->integer('document');
+            $table->integer('document')->unique();
             $table->string('genre');
             $table->date('birthday');
             $table->string('copyDocument');

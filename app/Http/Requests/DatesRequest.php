@@ -34,7 +34,24 @@ class DatesRequest extends FormRequest
             'copyTitle' => 'required',
             'copyNotes' => 'required',
             'copyOpsu' => 'required',
-            'copyBackground' => 'required',
+            'copyBackground' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'El nombre es obligatorio.',
+            'lastname.required' =>'El apellido es obligatorio.',
+            'document.required' => 'La cedula es muy importante.',
+            'genre.required' => 'Seleccione su género.',
+            'birthday.required' => 'Indique su fecha de nacimiento.',
+            'copyDocument.required' => 'No puede dejar el campo de la Copia  de la Cedula vacio.',
+            'copyBirth.required' => 'No puede dejar el campo de la Partida de nacimiento vacio.',
+            'copyTitle.required' => 'No puede dejar el campo de la Copia del Titulo de Bachiller vacio.',
+            'copyNotes.required' => 'No puede dejar el campo de las Notas Certificadas vacio.',
+            'copyOpsu.required' => 'No puede dejar el campo de la original de la OPSU vacio.',
+            'copyBackground.required' => 'No puede dejar el campo del Fondo Negro vacio.',
         ];
     }
 }

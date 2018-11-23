@@ -40,4 +40,30 @@ class IngresoController extends Controller
 
         return redirect()->route('user.index');
     }
+
+    function update(User $user)
+    {
+        $data = request()->validate([
+            'name' => 'required',
+            /* 'email' => 'required|email|unique:users,email,'.$user->id, */
+            //'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
+            'password' => ''
+         ], [
+                'name.required' => 'El campo nombre es obligatorio',
+                /* 'password.required' => 'La contraseña es necesaria ñero',
+                'email.required' => 'Aja y el email lo saco de donde?',
+                'email.unique' => 'Este email ya exite mi pana'  */
+        ]);
+
+        /* if($data['password'] != null)
+        {
+            $data['password'] = bcrypt($data['password']);
+        }else{
+            unset($data['password']);
+        } */
+
+        $user->update($data);
+
+        return redirect()->route('users.index');
+    }
 }
