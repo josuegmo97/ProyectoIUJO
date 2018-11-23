@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title' , 'default') | Josue</title>
     <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css.min') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/fontawesome/f/css/fontawesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome/f/css/fontawesome.css') }}">
 
         <!-- Bootstrap 4.0 Beta -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha256-m/h/cUDAhf6/iBRixTbuc8+Rg2cIETQtPcH9D3p2Kg0=" crossorigin="anonymous" />
@@ -49,6 +49,7 @@
                 </div>
             </footer> --}}
 
-    <script src="{{ asset('plugins/bootstrap/js/bootstrap.js') }}"></script>
+
+    {{-- <script src="{{ asset('/plugins/bootstrap/js/bootstrap.min.js') }}"></script> --}}
 </body>
 </html>

@@ -10,7 +10,7 @@ class IngresoController extends Controller
 {
     function index()
     {
-        $users = User::orderBy('id','desc')->paginate(8);
+        $users = User::orderBy('id','desc')->paginate(10);
 
         return view('user.index' , ['users' => $users]);
     }
