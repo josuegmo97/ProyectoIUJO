@@ -11,7 +11,7 @@
 <body>
         <header>
                 <nav class="navbar navbar-expand-md navbar-dark  bg-dark">
-                    <a class="navbar-brand" href="#">Pagina Principal</a>
+                    <a class="navbar-brand" href="{{ route('user.index') }}">@yield('navtitle' , 'Página Principal')</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false">
                         <span class="navbar-toggler-ico"></span>
                     </button>

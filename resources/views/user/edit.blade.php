@@ -2,6 +2,10 @@
 
 @section('title' , 'Editar')
 
+@section('navtitle' , 'Editar')
+
+@endsection
+
 @section('content')
 
     <style>
@@ -73,46 +77,46 @@
                 <div class="form-group col-md-6">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label" for="copyDocument">Copia cédula identidad:&nbsp;&nbsp;&nbsp;</label>
-                        <input class="form-check-input" type="radio" name="copyDocument" id="copyDocument" value="1">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-check-input" type="radio" name="copyDocument" id="copyDocument" value="0">No
+                        <input class="form-check-input" type="radio" name="copyDocument" id="copyDocument" value="Si">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="copyDocument" id="copyDocument" value="No">No
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label" for="copyBirth">Copia partida de nacimiento:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input class="form-check-input" type="radio" name="copyBirth" id="copyBirth" value="1">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-check-input" type="radio" name="copyBirth" id="copyBirth" value="0">No
+                        <input class="form-check-input" type="radio" name="copyBirth" id="copyBirth" value="Si">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="copyBirth" id="copyBirth" value="No">No
                     </div>
                 </div>
                 <div class="form-group col-md-6">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label" for="copyTitle">Copia título bachiller:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input class="form-check-input" type="radio" name="copyTitle" id="copyTitle" value="1">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-check-input" type="radio" name="copyTitle" id="copyTitle" value="0">No
+                        <input class="form-check-input" type="radio" name="copyTitle" id="copyTitle" value="Si">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="copyTitle" id="copyTitle" value="No">No
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label" for="copyNotes">Copia certificación calificaciones:&nbsp;&nbsp;&nbsp;</label>
-                        <input class="form-check-input" type="radio" name="copyNotes" id="copyNotes" value="1">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-check-input" type="radio" name="copyNotes" id="copyNotes" value="0">No
+                        <input class="form-check-input" type="radio" name="copyNotes" id="copyNotes" value="Si">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="copyNotes" id="copyNotes" value="No">No
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label" for="copyOpsu">Copia Opsu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                        <input class="form-check-input" type="radio" name="copyOpsu" id="copyOpsu" value="1">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-check-input" type="radio" name="copyOpsu" id="copyOpsu" value="0">No
+                        <input class="form-check-input" type="radio" name="copyOpsu" id="copyOpsu" value="Si">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="copyOpsu" id="copyOpsu" value="No">No
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
                     <div class="form-check form-check-inline">
                         <label class="form-check-label" for="copyBackground">Copia certificación calificaciones:&nbsp;&nbsp;&nbsp;</label>
-                        <input class="form-check-input" type="radio" name="copyBackground" id="copyBackground" value="1">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <input class="form-check-input" type="radio" name="copyBackground" id="copyBackground" value="0">No
+                        <input class="form-check-input" type="radio" name="copyBackground" id="copyBackground" value="Si">Si&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input class="form-check-input" type="radio" name="copyBackground" id="copyBackground" value="No">No
                     </div>
                 </div>
 

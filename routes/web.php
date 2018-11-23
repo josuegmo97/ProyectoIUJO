@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('usuario.index');
-});
+Route::get('/', 'IngresoController@index')->name('user.index');
+Route::get('/registrar' , 'IngresoController@create')->name('user.create');
+Route::get('/editar/{user}' , 'IngresoController@edit')->name('user.edit'); //le faltan parametros.
