@@ -10,7 +10,7 @@ class IngresoController extends Controller
 {
     function index()
     {
-        $users = User::all();
+        $users = User::orderBy('id' , 'desc')->paginate(8);
 
         return view('user.index' , ['users' => $users]);
     }
@@ -31,7 +31,13 @@ class IngresoController extends Controller
     {
         $users = User::find($id);
 
-        return view("user.edit" , ['users' => $users]);
+        if($users){
+            return view("user.edit" , ['users' => $users]);
+        }
+        else{
+            return response('Este usuario no existe' , 404);
+        }
+
     }
 
     function destroy(User $user)
@@ -43,27 +49,21 @@ class IngresoController extends Controller
 
     function update(User $user)
     {
-        $data = request()->validate([
-            'name' => 'required',
-            /* 'email' => 'required|email|unique:users,email,'.$user->id, */
-            //'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
-            'password' => ''
-         ], [
-                'name.required' => 'El campo nombre es obligatorio',
-                /* 'password.required' => 'La contraseña es necesaria ñero',
-                'email.required' => 'Aja y el email lo saco de donde?',
-                'email.unique' => 'Este email ya exite mi pana'  */
-        ]);
-
-        /* if($data['password'] != null)
-        {
-            $data['password'] = bcrypt($data['password']);
-        }else{
-            unset($data['password']);
-        } */
+        $data = request()->validate();
 
         $user->update($data);
 
+        //pilas esto
         return redirect()->route('users.index');
+    }
+
+    function definitive()
+    {
+        $users = User::orderBy('id' , 'asc')
+        ->where('copyTitle' , 'Si')
+        ->where('copyOpsu' , 'Si')
+        ->get();
+
+        return view('user.definitive' , ['users' => $users]);
     }
 }

@@ -1,6 +1,6 @@
 @extends('admin.template.main')
 
-@section('title' , 'Aspirantes')
+@section('title' , 'Lista Definitiva')
 
 @section('content')
 
@@ -26,10 +26,8 @@
     </style>
 
 <div class="d-flex justify-content-between align-items-end">
-    <h1 class="pb-2">Listado de Aspirantes.</h1>
-    <p>
-        <a href="{{ route('user.create') }}" class="btn btn-primary">Nuevo Aspirante</a>
-    </p>
+    <h1 class="pb-2">Listado Definitivo de Ingresos.</h1>
+    <h3>!! FELICIDADES !!</h3>
 </div>
 
 
@@ -47,7 +45,7 @@
             <th scope="col">Cert. Calif</th>
             <th scope="col">Opsu</th>
             <th scope="col">F. Negro</th>
-            <th scope="col">Acciones</th>
+            {{-- <th scope="col">Acciones</th> --}}
         </tr>
         </thead>
         <tbody>
@@ -64,28 +62,15 @@
             <td>{{ $user->copyNotes }}</td>
             <td>{{ $user->copyOpsu }}</td>
             <td>{{ $user->copyBackground }}</td>
-            <td>
-                <form action="{{ route('user.destroy' , $user) }}" method="POST">
-                        {{  method_field('DELETE') }}
-                        {!! csrf_field() !!}
-                    {{-- <a href="{{ route('users.show' , $user) }}" class="btn btn-link" ><span class="oi oi-eye"></span></a> --}}
-                    <a href="{{ route('user.edit' , $user) }}" class="btn btn-link" ><span class="oi oi-pencil"></span></a>
-                    <button class="btn btn-link" type="submit"><span class="oi oi-trash"></span></button>
-                </form>
-            </td>
         </tr>
         @endforeach
         </tbody>
     </table>
 
-    {{ $users->render() }}
 @else
-    <p>No hay usuarios registrados</p>
+    <p>No hay usuarios para esta lista</p>
 @endif
 
-    <center class="centered">
-        <a href="{{ route('user.definitive') }}"><button class="btn btn-success">!Lista Definitiva!</button></a>
-    </center>
         </div>
     </div>
 @endsection

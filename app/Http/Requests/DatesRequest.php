@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\User;
 
 class DatesRequest extends FormRequest
 {
@@ -26,7 +27,8 @@ class DatesRequest extends FormRequest
         return [
             'name' => 'required|max:20',
             'lastname' => 'required|max:20',
-            'document' => 'required',
+            'document' => 'required|unique:user,document',
+            /* 'email.unique' => 'Este email ya exite mi pana' */
             'genre' => 'required',
             'birthday' => 'required',
             'copyDocument' => 'required',
@@ -44,6 +46,7 @@ class DatesRequest extends FormRequest
             'name.required' => 'El nombre es obligatorio.',
             'lastname.required' =>'El apellido es obligatorio.',
             'document.required' => 'La cedula es muy importante.',
+            'document.unique' => 'Este documento de identidad ya ha sido registrado.',
             'genre.required' => 'Seleccione su género.',
             'birthday.required' => 'Indique su fecha de nacimiento.',
             'copyDocument.required' => 'No puede dejar el campo de la Copia  de la Cedula vacio.',
