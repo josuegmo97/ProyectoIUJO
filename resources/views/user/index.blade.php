@@ -42,7 +42,7 @@
             <th scope="col">Genero</th>
             <th scope="col">Fecha Nac</th>
             <th scope="col">C. Cedula</th>
-            <th scope="col">C. Partida nac.</th>
+            <th scope="col">C. Part nac.</th>
             <th scope="col">C. Titulo</th>
             <th scope="col">Cert. Calif</th>
             <th scope="col">Opsu</th>
@@ -51,6 +51,7 @@
         </tr>
         </thead>
         <tbody>
+
         @foreach($users as $user)
         <tr>
             <th scope="row">{{ $user->document }}</th>
@@ -64,13 +65,13 @@
             <td>{{ $user->copyOpsu }}</td>
             <td>{{ $user->copyBackground }}</td>
             <td>
-                {{-- <form action="{{ route('users.destroy' , $user) }}" method="POST">
+                <form action="{{ route('user.destroy' , $user) }}" method="POST">
                         {{  method_field('DELETE') }}
                         {!! csrf_field() !!}
-                    <a href="{{ route('users.show' , $user) }}" class="btn btn-link" ><span class="oi oi-eye"></span></a>
-                    <a href="{{ route('users.edit' , $user) }}" class="btn btn-link" ><span class="oi oi-pencil"></span></a>
+                    {{-- <a href="{{ route('users.show' , $user) }}" class="btn btn-link" ><span class="oi oi-eye"></span></a> --}}
+                    <a href="{{ route('user.edit' , $user) }}" class="btn btn-link" ><span class="oi oi-pencil"></span></a>
                     <button class="btn btn-link" type="submit"><span class="oi oi-trash"></span></button>
-                </form> --}}
+                </form>
             </td>
         </tr>
         @endforeach

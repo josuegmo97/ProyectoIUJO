@@ -13,4 +13,7 @@
 
 Route::get('/', 'IngresoController@index')->name('user.index');
 Route::get('/registrar' , 'IngresoController@create')->name('user.create');
-Route::get('/editar/{user}' , 'IngresoController@edit')->name('user.edit'); //le faltan parametros.
+Route::post('/registrar' , 'IngresoController@store')->name('user.store');
+Route::get('/editar/{user}' , 'IngresoController@edit')->name('user.edit')->where(['user' => '[0-9]+']); //le faltan parametros.
+Route::delete('/editar/{user}' ,'IngresoController@destroy')->name('user.destroy');
+Route::put('/editar/{user}' ,'IngresoController@update')->name('user.update');

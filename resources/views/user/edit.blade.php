@@ -2,9 +2,9 @@
 
 @section('title' , 'Editar')
 
-@section('navtitle' , 'Editar')
+@section('navtitle' , 'Editar Aspirante')
 
-@endsection
+
 
 @section('content')
 
@@ -33,26 +33,27 @@
         <h3 class="card-header">Información Personal</h3>
         <div class="card-body">
 
-        <form>
+        <form action="{{ route('user.store') }}" method="POST">
+            {!! csrf_field() !!}
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="name">Nombre:</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Introduzca su nombre...">
+                    <input type="text" class="form-control" id="name" name="name" value="{{ ($users->name) }}" placeholder="Introduzca su nombre...">
                 </div>
 
                 <div class="form-group col-md-6">
                     <label for="lastname">Apellido:</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Introduzca su apellido...">
+                    <input type="text" class="form-control" id="lastname" name="lastname" value="{{ ($users->lastname) }}" placeholder="Introduzca su apellido...">
                 </div>
 
                 <div class="form-group col-md-4">
                     <label for="document">Cédula de Identidad:</label>
-                    <input type="number" class="form-control" id="document" name="document" placeholder="Introduzca su cédula de identidad...">
+                    <input type="number" class="form-control" id="document" name="document" value="{{ ($users->document) }}" placeholder="Introduzca su cédula de identidad...">
                 </div>
 
                 <div class="form-group col-sm-4">
                     <label for="genre">Género:</label>
-                    <select required name="genre" class="form-control">
+                    <select required name="genre" value="{{ ($users->genre) }}" class="form-control">
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                         <option value="Otros">Otros</option>
@@ -61,7 +62,7 @@
 
                 <div class="form-group col-md-4">
                     <label for="birthday">Fecha de Nacimiento:</label>
-                    <input type="date" class="form-control" id="birthday" name="birthday">
+                    <input type="date" class="form-control" value="{{ ($users->birthday) }}" id="birthday" name="birthday">
                 </div>
             </div>
         </div>

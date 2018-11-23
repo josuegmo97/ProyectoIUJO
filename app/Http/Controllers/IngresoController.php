@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\DatesRequest;
 use App\User;
 
 class IngresoController extends Controller
@@ -19,8 +20,24 @@ class IngresoController extends Controller
         return view('user.create');
     }
 
-    function edit()
+    function store(DatesRequest $request)
     {
-        return view("user.edit");
+        User::create($request->all());
+
+        return redirect()->route('user.index');
+    }
+
+    function edit($id)
+    {
+        $users = User::find($id);
+
+        return view("user.edit" , ['users' => $users]);
+    }
+
+    function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('user.index');
     }
 }
