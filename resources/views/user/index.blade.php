@@ -69,8 +69,8 @@
                         {{  method_field('DELETE') }}
                         {!! csrf_field() !!}
                     {{-- <a href="{{ route('users.show' , $user) }}" class="btn btn-link" ><span class="oi oi-eye"></span></a> --}}
-                    <a href="{{ route('user.edit' , $user) }}" class="btn btn-link" ><span class="oi oi-pencil"></span></a>
-                    <button class="btn btn-link" type="submit"><span class="oi oi-trash"></span></button>
+                    <a href="{{ route('user.edit' , $user) }}" class="btn btn-link" ><span style="color:teal">Editar</span></a>
+                    <button class="btn btn-link" type="submit"><span style="color:red">x</span></button>
                 </form>
             </td>
         </tr>
